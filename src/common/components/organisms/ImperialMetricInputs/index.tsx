@@ -8,7 +8,7 @@ import {INPUT_TEXT_SIZE} from '../../../utils/constants/textSize';
 import Text from '../../atoms/Text';
 import FormTextInput from '../../molecules/inputs/FormTextInput';
 import {css} from '@emotion/react/macro';
-import {Col, Row, Visible} from 'react-grid-system';
+import {Col, Row, Visible, useScreenClass} from 'react-grid-system';
 import Separator from '../../layout/Separator';
 
 interface Props {
@@ -57,6 +57,8 @@ const ImperialMetricInputs: FC<Props> = ({
   onBlur,
   onChange,
 }) => {
+  const screenClass = useScreenClass();
+  console.log(screenClass);
   const onMeasureImperialSelect = useCallback(() => {
     setFieldValue('measureSystemSelection', 'imperial');
   }, [setFieldValue]);

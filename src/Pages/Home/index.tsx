@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import {FC, memo} from 'react';
+import {FC, memo, useCallback, useState} from 'react';
 import {css} from "@emotion/react/macro";
 import TextInput from "../../common/components/atoms/inputs/TextInput";
 import FormTextInput from "../../common/components/molecules/inputs/FormTextInput";
@@ -11,6 +11,11 @@ interface Props {
 
 }
 const HomePage: FC<Props> = () => {
+    const [actualTab, setActualTab] = useState(() => 'metric');
+
+    const setFieldValue = useCallback((_, value) => {
+        setActualTab(value);
+    }, []);
     return (
         <div>
             {/*
@@ -51,6 +56,14 @@ const HomePage: FC<Props> = () => {
                 </div>
              */
             }
+            <div css={atomAndMoleculeContainer}>
+                <ImperialMetricInputs
+                    measureSystemValue={actualTab}
+                    setFieldValue={setFieldValue}
+                    onBlur={() => console.log('blur')}
+                    onChange={() => console.log('sadss')}
+                />
+            </div>
         </div>
     );
 };
