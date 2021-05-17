@@ -37,15 +37,20 @@ const HomePage: FC<Props> = () => {
                 </div>
              */
             }
-            <div css={atomAndMoleculeContainer}>
-                <ImperialMetricInputs
-                    measureSystemValue={'metric'}
-                    setFieldValue={() => console.log('set field')}
-                    onBlur={() => console.log('blur')}
-                    onChange={() => console.log('sadss')}
-                />
-            </div>
 
+            {/*
+              * Third step, organism
+              *
+                <div css={atomAndMoleculeContainer}>
+                    <ImperialMetricInputs
+                        measureSystemValue={'metric'}
+                        setFieldValue={() => console.log('set field')}
+                        onBlur={() => console.log('blur')}
+                        onChange={() => console.log('sadss')}
+                    />
+                </div>
+             */
+            }
         </div>
     );
 };
