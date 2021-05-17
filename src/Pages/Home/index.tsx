@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 
 import {FC, memo} from 'react';
-import TextInput from "../../common/components/atoms/inputs/TextInput";
 import {css} from "@emotion/react/macro";
+import TextInput from "../../common/components/atoms/inputs/TextInput";
+import FormTextInput from "../../common/components/molecules/inputs/FormTextInput";
 
 interface Props {
 
@@ -13,7 +14,7 @@ const HomePage: FC<Props> = () => {
             {/*
               * First step, atom
               *
-                <div css={atomContainer}>
+                <div css={atomAndMoleculeContainer}>
                     <TextInput onChange={() => console.log('change')} onBlur={() => console.log('blur')}
                                placeholder={'cm'}/>
                 </div>
@@ -23,17 +24,24 @@ const HomePage: FC<Props> = () => {
             {/*
               * Second step, molecule
               *
-                <div css={atomContainer}>
-                    <TextInput onChange={() => console.log('change')} onBlur={() => console.log('blur')}
-                               placeholder={'cm'}/>
+                <div css={atomAndMoleculeContainer}>
+                    <FormTextInput
+                        name={'cm'}
+                        onChange={() =>  console.log('on change')}
+                        onBlur={() => console.log('blur')}
+                        placeholder={'cm'}
+                        labelText={'centimeters'}
+                    />
                 </div>
              */
             }
+
         </div>
     );
 };
 
-const atomContainer = css({
+const atomAndMoleculeContainer = css({
+    margin: 20,
     width: '30%',
 })
 
